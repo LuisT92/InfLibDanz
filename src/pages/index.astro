@@ -1,0 +1,432 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Carousel from '../components/Carousel.astro';
+import ScrollToTop from '../components/ScrollToTop.astro';
+
+// Imágenes para el carrusel - Danzas Folklóricas Mexicanas
+// Puedes usar GIFs animados o imágenes estáticas
+// Reemplaza estas URLs con tus propias imágenes/GIFs en /public/images/
+const carouselImages = [
+  'https://media.giphy.com/media/l0HlHSB8v5yRPzJyU/giphy.gif',
+  'https://media.giphy.com/media/3o6ZsYq8ERHRxXF5vO/giphy.gif',
+  'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXZjcmN3Y2p6dGQ5enAyaXN3dHd1aHg0ZWJ2dGFvNXVsdWN6dXBxbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlHSB8v5yRPzJyU/giphy.gif',
+  'https://media.giphy.com/media/xUA7bdqBPNhxOHxQGY/giphy.gif'
+];
+---
+
+<Layout title="Inicio - Escuela de Danzas Populares Mexicanas" description="Escuela de Danzas Folklóricas y Populares Mexicanas - Preservando nuestras tradiciones">
+  <Header />
+  
+  <main>
+    <Carousel images={carouselImages} />
+    
+    <section class="about-section">
+      <div class="container">
+        <h2>Bienvenidos a Nuestra Escuela de Danzas Populares Mexicanas</h2>
+        <p class="lead">
+          Descubre la riqueza de nuestra cultura a través de las danzas tradicionales mexicanas. 
+          Preservamos y enseñamos el folklore de México para todas las edades.
+        </p>
+        
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🇲🇽</div>
+            <h3>Tradición Mexicana</h3>
+            <p>Preservamos y enseñamos las danzas tradicionales de las diferentes regiones de México.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">👨‍👩‍👧‍👦</div>
+            <h3>Todas las Edades</h3>
+            <p>Programas especializados para niños, jóvenes y adultos que deseen conocer nuestras raíces.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">🎉</div>
+            <h3>Cultura Viva</h3>
+            <p>Aprende la historia, música, vestuario y significado de cada danza folklórica.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">🎊</div>
+            <h3>Eventos Culturales</h3>
+            <p>Participa en festivales, fiestas patrias y presentaciones de folklore mexicano.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="classes-section">
+      <div class="container">
+        <h2>Danzas Tradicionales Mexicanas</h2>
+        <div class="classes-grid">
+          <div class="class-card">
+            <h3>Jarabe Tapatío</h3>
+            <p>El baile más representativo de México. Jalisco nos regala esta hermosa tradición.</p>
+          </div>
+          
+          <div class="class-card">
+            <h3>Danza de los Viejitos</h3>
+            <p>Tradición purépecha de Michoacán llena de humor y significado cultural.</p>
+          </div>
+          
+          <div class="class-card">
+            <h3>La Bamba</h3>
+            <p>Danza jarocha de Veracruz, alegre y llena de energía del son mexicano.</p>
+          </div>
+          
+          <div class="class-card">
+            <h3>Danza de los Voladores</h3>
+            <p>Ritual ancestral de Papantla que conecta tierra y cielo.</p>
+          </div>
+          
+          <div class="class-card">
+            <h3>Polka Norteña</h3>
+            <p>Ritmos del norte de México con influencias europeas y sabor regional.</p>
+          </div>
+          
+          <div class="class-card">
+            <h3>La Sandunga</h3>
+            <p>Elegante danza zapoteca de Oaxaca, símbolo de la cultura istmeña.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="about-teacher-section" id="acerca-de">
+      <div class="container">
+        <h2>Acerca de la Maestra</h2>
+        
+        <div class="teacher-content">
+          <div class="teacher-photo">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop" alt="Maestra de Danza" />
+          </div>
+          
+          <div class="teacher-info">
+            <h3>Maestra [Nombre de la Maestra]</h3>
+            <p class="teacher-subtitle">Directora y Fundadora de la Escuela</p>
+            
+            <div class="teacher-bio">
+              <p>
+                Con más de 15 años de experiencia en la enseñanza de danza, [Nombre] ha dedicado su vida 
+                a formar bailarines con técnica, pasión y disciplina. Su filosofía se centra en el desarrollo 
+                integral del estudiante, combinando excelencia técnica con expresión artística.
+              </p>
+              <p>
+                Apasionada por transmitir el amor por la danza a nuevas generaciones, ha creado un espacio 
+                donde cada alumno puede descubrir y desarrollar su potencial artístico en un ambiente 
+                profesional y acogedor.
+              </p>
+            </div>
+            
+            <div class="teacher-credentials">
+              <h4>📚 Formación Académica</h4>
+              <ul>
+                <li><strong>Licenciatura en Danza Clásica</strong> - [Universidad/Institución]</li>
+                <li><strong>Diplomado en Pedagogía de la Danza</strong> - [Institución]</li>
+                <li><strong>Certificación en Danza Contemporánea</strong> - [Institución]</li>
+                <li><strong>Especialización en Ballet Infantil</strong> - [Institución]</li>
+              </ul>
+              
+              <h4>🏆 Experiencia Profesional</h4>
+              <ul>
+                <li>Bailarina Principal - [Compañía de Danza] (Años)</li>
+                <li>Coreógrafa - [Producciones destacadas]</li>
+                <li>Jurado en festivales nacionales e internacionales</li>
+                <li>Talleres y masterclasses en múltiples países</li>
+              </ul>
+              
+              <h4>✨ Reconocimientos</h4>
+              <ul>
+                <li>Premio a la Excelencia en Enseñanza de la Danza</li>
+                <li>Reconocimiento por Trayectoria Artística</li>
+                <li>Mención honorífica en pedagogía dancística</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="cta-section">
+      <div class="container">
+        <h2>¿Listo para comenzar?</h2>
+        <p>Únete a nuestra comunidad de bailarines y descubre tu potencial.</p>
+        <button class="cta-button">Contáctanos Hoy</button>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+  <ScrollToTop />
+</Layout>
+
+<style>
+  main {
+    width: 100%;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .about-section {
+    padding: 4rem 0;
+    background-color: white;
+  }
+
+  .about-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .lead {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .feature-card {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .feature-card p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .classes-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+
+  .classes-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .classes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .class-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, background 0.3s;
+  }
+
+  .class-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .class-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .class-card p {
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+
+  .about-teacher-section {
+    padding: 5rem 0;
+    background-color: white;
+  }
+
+  .about-teacher-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+  }
+
+  .teacher-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .teacher-photo {
+    position: sticky;
+    top: 100px;
+  }
+
+  .teacher-photo img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .teacher-info h3 {
+    font-size: 2rem;
+    color: #667eea;
+    margin-bottom: 0.5rem;
+  }
+
+  .teacher-subtitle {
+    font-size: 1.1rem;
+    color: #764ba2;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .teacher-bio {
+    margin-bottom: 2rem;
+  }
+
+  .teacher-bio p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .teacher-credentials {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 2rem;
+    border-radius: 15px;
+  }
+
+  .teacher-credentials h4 {
+    color: #667eea;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .teacher-credentials h4:first-child {
+    margin-top: 0;
+  }
+
+  .teacher-credentials ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .teacher-credentials li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .teacher-credentials li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+  }
+
+  .cta-section {
+    padding: 5rem 0;
+    background-color: white;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .cta-section p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+
+  .cta-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    .about-section h2,
+    .classes-section h2,
+    .about-teacher-section h2,
+    .cta-section h2 {
+      font-size: 2rem;
+    }
+
+    .features-grid,
+    .classes-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-section,
+    .classes-section,
+    .about-teacher-section,
+    .cta-section {
+      padding: 3rem 0;
+    }
+
+    .teacher-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .teacher-photo {
+      position: static;
+      max-width: 250px;
+      margin: 0 auto;
+    }
+  }
+</style>
