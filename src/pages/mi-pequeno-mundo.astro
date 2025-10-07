@@ -3,123 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ScrollToTop from '../components/ScrollToTop.astro';
+import DarkModeToggle from '../components/DarkModeToggle.astro';
+import { planEdadAB, planEdadCD } from '../data/planes.js';
 
-// Plan de trabajo por meses y semanas - Edad A-B
-const planEdadAB = [
-  {
-    mes: 1,
-    nombre: "Octubre 2025",
-    descripcion: "Introducción y fundamentos básicos",
-    semanas: [
-      { numero: 1, titulo: "Bienvenida y Calentamiento", objetivos: ["Conocer las instalaciones", "Ejercicios de estiramiento"], actividades: ["Presentación del grupo", "Calentamiento básico"] },
-      { numero: 2, titulo: "Ritmo y Coordinación", objetivos: ["Desarrollar sentido del ritmo", "Coordinación mano-pie"], actividades: ["Ejercicios de palmadas", "Seguir patrones rítmicos"] },
-      { numero: 3, titulo: "Expresión Corporal", objetivos: ["Libertad de movimiento", "Expresar emociones"], actividades: ["Improvisación libre", "Juegos expresivos"] },
-      { numero: 4, titulo: "Primeros Pasos de Ballet", objetivos: ["Posiciones básicas de pies", "Posiciones de brazos"], actividades: ["Primera posición", "Demi-plié"] }
-    ]
-  },
-  {
-    mes: 2,
-    nombre: "Noviembre 2025",
-    descripcion: "Técnica básica y desarrollo",
-    semanas: [
-      { numero: 5, titulo: "Equilibrio y Balance", objetivos: ["Mejorar equilibrio", "Mantener posturas"], actividades: ["Ejercicios en una pierna", "Posiciones de balance"] },
-      { numero: 6, titulo: "Flexibilidad", objetivos: ["Aumentar rango de movimiento", "Prevención de lesiones"], actividades: ["Estiramientos dinámicos", "Splits progresivos"] },
-      { numero: 7, titulo: "Giros Básicos", objetivos: ["Técnica de spotting", "Giros en paralelo"], actividades: ["Spotting practice", "Giros simples"] },
-      { numero: 8, titulo: "Combinaciones Simples", objetivos: ["Memorizar secuencias", "Fluidez en movimientos"], actividades: ["Coreografía corta", "Práctica grupal"] }
-    ]
-  },
-  {
-    mes: 3,
-    nombre: "Diciembre 2025",
-    descripcion: "Consolidación y festival navideño",
-    semanas: [
-      { numero: 9, titulo: "Saltos Básicos", objetivos: ["Técnica de salto", "Aterrizaje suave"], actividades: ["Sautés", "Temps levé"] },
-      { numero: 10, titulo: "Danza en Pareja", objetivos: ["Trabajo colaborativo", "Sincronización"], actividades: ["Ejercicios en dueto", "Lifts básicos"] },
-      { numero: 11, titulo: "Coreografía Navideña", objetivos: ["Preparar presentación", "Trabajo en conjunto"], actividades: ["Ensayo intensivo", "Prueba de vestuario"] },
-      { numero: 12, titulo: "Festival Navideño", objetivos: ["Presentación pública", "Confianza escénica"], actividades: ["Presentación final", "Festival navideño"] }
-    ]
-  },
-  {
-    mes: 4,
-    nombre: "Enero 2026",
-    descripcion: "Nuevo comienzo y técnica avanzada",
-    semanas: [
-      { numero: 13, titulo: "Evaluación y Objetivos", objetivos: ["Revisar progreso", "Establecer nuevas metas"], actividades: ["Evaluación técnica", "Retroalimentación"] },
-      { numero: 14, titulo: "Jazz Dance", objetivos: ["Introducción al jazz", "Aislaciones"], actividades: ["Técnica jazz", "Coreografía energética"] },
-      { numero: 15, titulo: "Adagio y Control", objetivos: ["Movimientos lentos", "Control muscular"], actividades: ["Adagio exercise", "Développés"] },
-      { numero: 16, titulo: "Musicality Avanzada", objetivos: ["Interpretación musical", "Diferentes ritmos"], actividades: ["Análisis musical", "Interpretación libre"] }
-    ]
-  },
-  {
-    mes: 5,
-    nombre: "Febrero 2026",
-    descripcion: "Expresión y estilos diversos",
-    semanas: [
-      { numero: 17, titulo: "Hip Hop Fundamentals", objetivos: ["Cultura hip hop", "Grooves básicos"], actividades: ["Breaking basics", "House dance"] },
-      { numero: 18, titulo: "Danza Contemporánea", objetivos: ["Técnica Graham", "Floor work"], actividades: ["Contraction-release", "Spiral technique"] },
-      { numero: 19, titulo: "Flamenco Básico", objetivos: ["Zapateado básico", "Braceo"], actividades: ["Técnica de pies", "Palmas y ritmo"] },
-      { numero: 20, titulo: "Integración de Estilos", objetivos: ["Fusión de técnicas", "Versatilidad"], actividades: ["Coreografía fusion", "Experimentación"] }
-    ]
-  },
-  {
-    mes: 6,
-    nombre: "Marzo 2026",
-    descripcion: "Fortalecimiento y técnica avanzada",
-    semanas: [
-      { numero: 21, titulo: "Fortalecimiento Core", objetivos: ["Abdominales fuertes", "Estabilidad"], actividades: ["Pilates para bailarines", "Core workout"] },
-      { numero: 22, titulo: "Piruetas Avanzadas", objetivos: ["Múltiples giros", "Diferentes tipos"], actividades: ["Doubles y triples", "À la seconde turns"] },
-      { numero: 23, titulo: "Grand Allegro", objetivos: ["Saltos grandes", "Desplazamiento"], actividades: ["Tours en l'air", "Grand jeté"] },
-      { numero: 24, titulo: "Preparación Mid-term", objetivos: ["Coreografía compleja", "Ensayo intensivo"], actividades: ["Montaje coreográfico", "Práctica de grupo"] }
-    ]
-  },
-  {
-    mes: 7,
-    nombre: "Abril 2026",
-    descripcion: "Presentación y desarrollo artístico",
-    semanas: [
-      { numero: 25, titulo: "Presentación Mid-term", objetivos: ["Muestra de progreso", "Experiencia escénica"], actividades: ["Presentación pública", "Feedback"] },
-      { numero: 26, titulo: "Composición Coreográfica", objetivos: ["Crear coreografía propia", "Estructura"], actividades: ["Taller de composición", "Trabajo en grupos"] },
-      { numero: 27, titulo: "Improvisación Avanzada", objetivos: ["Libertad creativa", "Respuesta instintiva"], actividades: ["Contact improvisation", "Estructura abierta"] },
-      { numero: 28, titulo: "Historia de la Danza", objetivos: ["Contexto histórico", "Grandes coreógrafos"], actividades: ["Presentaciones", "Análisis de obras"] }
-    ]
-  },
-  {
-    mes: 8,
-    nombre: "Mayo 2026",
-    descripcion: "Preparación para recital final",
-    semanas: [
-      { numero: 29, titulo: "Selección de Repertorio", objetivos: ["Elegir piezas", "Roles asignados"], actividades: ["Audiciones", "Casting"] },
-      { numero: 30, titulo: "Ensayos Intensivos I", objetivos: ["Memorizar coreografías", "Precisión técnica"], actividades: ["Ensayos diarios", "Seccionales"] },
-      { numero: 31, titulo: "Ensayos Intensivos II", objetivos: ["Pulir detalles", "Transiciones"], actividades: ["Correcciones", "Ensayos completos"] },
-      { numero: 32, titulo: "Vestuario y Producción", objetivos: ["Pruebas de vestuario", "Maquillaje escénico"], actividades: ["Fitting de vestuario", "Tutorial de maquillaje"] }
-    ]
-  },
-  {
-    mes: 9,
-    nombre: "Junio 2026",
-    descripcion: "Ensayos finales y presentación",
-    semanas: [
-      { numero: 33, titulo: "Ensayo General I", objetivos: ["Ensayo con vestuario", "Timing completo"], actividades: ["Dress rehearsal", "Ajustes finales"] },
-      { numero: 34, titulo: "Ensayo General II", objetivos: ["Ensayo en el teatro", "Iluminación"], actividades: ["Tech rehearsal", "Spacing en escenario"] },
-      { numero: 35, titulo: "Recital Final - Primera Función", objetivos: ["Primera presentación", "Experiencia profesional"], actividades: ["Presentación pública", "Convivencia pre-show"] },
-      { numero: 36, titulo: "Recital Final - Segunda Función", objetivos: ["Consolidar experiencia", "Mejora continua"], actividades: ["Segunda función", "Fotos y videos"] }
-    ]
-  },
-  {
-    mes: 10,
-    nombre: "Julio 2026",
-    descripcion: "Cierre y evaluación final",
-    semanas: [
-      { numero: 37, titulo: "Evaluación Final", objetivos: ["Revisar progreso anual", "Reconocimientos"], actividades: ["Evaluación individual", "Entrega de certificados"] },
-      { numero: 38, titulo: "Taller de Verano I", objetivos: ["Consolidar aprendizaje", "Experimentación"], actividades: ["Talleres especiales", "Clases magistrales"] },
-      { numero: 39, titulo: "Taller de Verano II", objetivos: ["Explorar nuevos estilos", "Guest teachers"], actividades: ["Clases con invitados", "Workshops"] },
-      { numero: 40, titulo: "Despedida y Próximo Ciclo", objetivos: ["Cierre emocional", "Proyección futura"], actividades: ["Convivencia final", "Planeación próximo año"] }
-    ]
-  }
-];
-
-// Plan de trabajo por meses y semanas - Edad C-D (mismo contenido, diferente grupo)
-const planEdadCD = [...planEdadAB]; // Usa la misma estructura pero se puede personalizar
+// Planes importados desde archivo separado
+// planEdadAB: 3 a 5 Años - "Pequeños Exploradores"
+// planEdadCD: 6 a 8 Años - "Aprendices de la Técnica" // Usa la misma estructura pero se puede personalizar
 ---
 
 <Layout title="Mi Pequeño Mundo - Plan de Trabajo">
@@ -131,17 +20,15 @@ const planEdadCD = [...planEdadAB]; // Usa la misma estructura pero se puede per
         <h1>Mi Pequeño Mundo</h1>
         <p class="subtitle">Plan de Trabajo - 10 Meses de Desarrollo</p>
         <p class="hero-description">Planes adaptados por grupos de edad para un desarrollo óptimo</p>
-      </div>
     </section>
 
     <section class="timeline-section">
       <div class="container">
         <div class="age-columns">
-          <!-- Columna Edad A-B -->
           <div class="age-column">
             <div class="age-header">
-              <h2>👧 Edad A-B</h2>
-              <p>Programa diseñado para edades [especificar rango]</p>
+              <h2>Edad A-B: 3 a 5 Años</h2>
+              <p>"Pequeños Exploradores"</p>
             </div>
             
             <div class="timeline">
@@ -193,8 +80,8 @@ const planEdadCD = [...planEdadAB]; // Usa la misma estructura pero se puede per
           <!-- Columna Edad C-D -->
           <div class="age-column">
             <div class="age-header">
-              <h2>🧒 Edad C-D</h2>
-              <p>Programa diseñado para edades [especificar rango]</p>
+              <h2>Edad C-D: 6 a 8 Años</h2>
+              <p>"Aprendices de la Técnica"</p>
             </div>
             
             <div class="timeline">
@@ -249,6 +136,7 @@ const planEdadCD = [...planEdadAB]; // Usa la misma estructura pero se puede per
   
   <Footer />
   <ScrollToTop />
+  <DarkModeToggle />
 </Layout>
 
 <style>

@@ -40,12 +40,60 @@ const { title = 'Escuela de Danza', description = 'Bienvenido a nuestra Escuela 
 
 	html,
 	body {
-		margin: 0;
 		padding: 0;
 		width: 100%;
 		min-height: 100%;
 		font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 		background-color: #f8f9fa;
+		transition: background-color 0.3s, color 0.3s;
+	}
+
+	/* Dark Mode Styles */
+	body.dark-mode {
+		background-color: #1a1a2e;
+		color: #eaeaea;
+	}
+
+	body.dark-mode .about-section,
+	body.dark-mode .about-teacher-section,
+	body.dark-mode .cta-section,
+	body.dark-mode .timeline-section {
+		background-color: #16213e;
+	}
+
+	body.dark-mode .feature-card,
+	body.dark-mode .class-card,
+	body.dark-mode .month-block,
+	body.dark-mode .week-card {
+		background-color: #0f3460;
+		color: #eaeaea;
+		border-color: rgba(255, 255, 255, 0.1);
+	}
+
+	body.dark-mode .teacher-content,
+	body.dark-mode .teacher-credentials {
+		background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+	}
+
+	body.dark-mode h1,
+	body.dark-mode h2,
+	body.dark-mode h3,
+	body.dark-mode h4 {
+		color: #eaeaea;
+	}
+
+	body.dark-mode p,
+	body.dark-mode li {
+		color: #c5c5c5;
+	}
+
+	body.dark-mode .week-header {
+		background-color: #16213e;
+		border-bottom-color: rgba(255, 255, 255, 0.1);
+	}
+
+	body.dark-mode .footer {
+		background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
 	}
 
 	.page-wrapper {
@@ -59,7 +107,7 @@ const { title = 'Escuela de Danza', description = 'Bienvenido a nuestra Escuela 
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		font-weight: 600;
+		margin: 0;
 	}
 
 	a {

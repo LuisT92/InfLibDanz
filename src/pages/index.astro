@@ -4,15 +4,15 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Carousel from '../components/Carousel.astro';
 import ScrollToTop from '../components/ScrollToTop.astro';
+import DarkModeToggle from '../components/DarkModeToggle.astro';
 
 // Imágenes para el carrusel - Danzas Folklóricas Mexicanas
-// Puedes usar GIFs animados o imágenes estáticas
-// Reemplaza estas URLs con tus propias imágenes/GIFs en /public/images/
+// Usando las imágenes locales de la carpeta public/images/
 const carouselImages = [
-  'https://media.giphy.com/media/l0HlHSB8v5yRPzJyU/giphy.gif',
-  'https://media.giphy.com/media/3o6ZsYq8ERHRxXF5vO/giphy.gif',
-  'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXZjcmN3Y2p6dGQ5enAyaXN3dHd1aHg0ZWJ2dGFvNXVsdWN6dXBxbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlHSB8v5yRPzJyU/giphy.gif',
-  'https://media.giphy.com/media/xUA7bdqBPNhxOHxQGY/giphy.gif'
+  '/images/slide1.png',
+  '/images/slide2.png',
+  '/images/slide3.png',
+  '/images/slide4.png'
 ];
 ---
 
@@ -24,7 +24,7 @@ const carouselImages = [
     
     <section class="about-section">
       <div class="container">
-        <h2>Bienvenidos a Nuestra Escuela de Danzas Populares Mexicanas</h2>
+        <h2>Bienvenidos a Nuestro Taller de Danzas Populares Mexicanas</h2>
         <p class="lead">
           Descubre la riqueza de nuestra cultura a través de las danzas tradicionales mexicanas. 
           Preservamos y enseñamos el folklore de México para todas las edades.
@@ -38,9 +38,9 @@ const carouselImages = [
           </div>
           
           <div class="feature-card">
-            <div class="feature-icon">👨‍👩‍👧‍👦</div>
-            <h3>Todas las Edades</h3>
-            <p>Programas especializados para niños, jóvenes y adultos que deseen conocer nuestras raíces.</p>
+            <div class="feature-icon">👦👧</div>
+            <h3>Enfoque según edad</h3>
+            <p>Programas especializados para niños y niñas de diferentes edades que deseen conocer nuestras raíces.</p>
           </div>
           
           <div class="feature-card">
@@ -49,47 +49,33 @@ const carouselImages = [
             <p>Aprende la historia, música, vestuario y significado de cada danza folklórica.</p>
           </div>
           
-          <div class="feature-card">
-            <div class="feature-icon">🎊</div>
-            <h3>Eventos Culturales</h3>
-            <p>Participa en festivales, fiestas patrias y presentaciones de folklore mexicano.</p>
-          </div>
         </div>
       </div>
     </section>
     
     <section class="classes-section">
       <div class="container">
-        <h2>Danzas Tradicionales Mexicanas</h2>
+        <h2>Regiones que Exploraremos</h2>
+        <p class="section-description">A lo largo del ciclo, los niños aprenderán las danzas tradicionales de 4 regiones de México</p>
         <div class="classes-grid">
           <div class="class-card">
-            <h3>Jarabe Tapatío</h3>
-            <p>El baile más representativo de México. Jalisco nos regala esta hermosa tradición.</p>
+            <h3>🎻 Jalisco</h3>
+            <p>Aprenderemos el Jarabe Tapatío, valseo, zapateado y el manejo del sombrero. Conoceremos la música del Mariachi y el orgullo tapatío.</p>
           </div>
           
           <div class="class-card">
-            <h3>Danza de los Viejitos</h3>
-            <p>Tradición purépecha de Michoacán llena de humor y significado cultural.</p>
+            <h3>🌊 Veracruz</h3>
+            <p>Exploraremos La Bamba y el Son Jarocho, el zapateado jarocho y el manejo del paliacate. Sentiremos la alegría del puerto.</p>
           </div>
           
           <div class="class-card">
-            <h3>La Bamba</h3>
-            <p>Danza jarocha de Veracruz, alegre y llena de energía del son mexicano.</p>
+            <h3>🐴 Tamaulipas</h3>
+            <p>Descubriremos el Huapango norteño, el galope característico y la picardía de la Cuera tamaulipeca con sus movimientos enérgicos.</p>
           </div>
           
           <div class="class-card">
-            <h3>Danza de los Voladores</h3>
-            <p>Ritual ancestral de Papantla que conecta tierra y cielo.</p>
-          </div>
-          
-          <div class="class-card">
-            <h3>Polka Norteña</h3>
-            <p>Ritmos del norte de México con influencias europeas y sabor regional.</p>
-          </div>
-          
-          <div class="class-card">
-            <h3>La Sandunga</h3>
-            <p>Elegante danza zapoteca de Oaxaca, símbolo de la cultura istmeña.</p>
+            <h3>🦜 Chiapas</h3>
+            <p>Conoceremos las danzas chiapanecas con zapateado fuerte, la elegancia de sus movimientos y el ritmo de la Marimba.</p>
           </div>
         </div>
       </div>
@@ -97,7 +83,7 @@ const carouselImages = [
     
     <section class="about-teacher-section" id="acerca-de">
       <div class="container">
-        <h2>Acerca de la Maestra</h2>
+        <h2>Acerca de la Profesora</h2>
         
         <div class="teacher-content">
           <div class="teacher-photo">
@@ -105,8 +91,8 @@ const carouselImages = [
           </div>
           
           <div class="teacher-info">
-            <h3>Maestra [Nombre de la Maestra]</h3>
-            <p class="teacher-subtitle">Directora y Fundadora de la Escuela</p>
+            <h3>Libertad Felix Espinoza</h3>
+            <p class="teacher-subtitle">Maestra del taller de danzas</p>
             
             <div class="teacher-bio">
               <p>
@@ -129,38 +115,16 @@ const carouselImages = [
                 <li><strong>Certificación en Danza Contemporánea</strong> - [Institución]</li>
                 <li><strong>Especialización en Ballet Infantil</strong> - [Institución]</li>
               </ul>
-              
-              <h4>🏆 Experiencia Profesional</h4>
-              <ul>
-                <li>Bailarina Principal - [Compañía de Danza] (Años)</li>
-                <li>Coreógrafa - [Producciones destacadas]</li>
-                <li>Jurado en festivales nacionales e internacionales</li>
-                <li>Talleres y masterclasses en múltiples países</li>
-              </ul>
-              
-              <h4>✨ Reconocimientos</h4>
-              <ul>
-                <li>Premio a la Excelencia en Enseñanza de la Danza</li>
-                <li>Reconocimiento por Trayectoria Artística</li>
-                <li>Mención honorífica en pedagogía dancística</li>
-              </ul>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    
-    <section class="cta-section">
-      <div class="container">
-        <h2>¿Listo para comenzar?</h2>
-        <p>Únete a nuestra comunidad de bailarines y descubre tu potencial.</p>
-        <button class="cta-button">Contáctanos Hoy</button>
       </div>
     </section>
   </main>
   
   <Footer />
   <ScrollToTop />
+  <DarkModeToggle />
 </Layout>
 
 <style>
@@ -239,13 +203,22 @@ const carouselImages = [
   .classes-section h2 {
     text-align: center;
     font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-description {
+    text-align: center;
+    font-size: 1.1rem;
     margin-bottom: 3rem;
+    opacity: 0.95;
   }
 
   .classes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
   }
 
   .class-card {
@@ -363,46 +336,10 @@ const carouselImages = [
     font-weight: bold;
   }
 
-  .cta-section {
-    padding: 5rem 0;
-    background-color: white;
-    text-align: center;
-  }
-
-  .cta-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-
-  .cta-section p {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 2rem;
-  }
-
-  .cta-button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    padding: 1rem 3rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-  }
-
   @media (max-width: 768px) {
     .about-section h2,
     .classes-section h2,
-    .about-teacher-section h2,
-    .cta-section h2 {
+    .about-teacher-section h2 {
       font-size: 2rem;
     }
 
@@ -413,8 +350,7 @@ const carouselImages = [
 
     .about-section,
     .classes-section,
-    .about-teacher-section,
-    .cta-section {
+    .about-teacher-section {
       padding: 3rem 0;
     }
 
